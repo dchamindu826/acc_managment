@@ -1,0 +1,108 @@
+/* src/pages/Outstanding/Outstanding.module.css */
+@import '../../styles/variables.css';
+
+.outstandingPage {
+  padding: 1rem;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid var(--border-color);
+  flex-wrap: wrap; /* Allow wrapping */
+}
+
+.header h1 {
+  margin: 0 1rem 0 0; /* Add right margin */
+}
+
+.headerActions {
+    display: flex;
+    gap: 0.8rem;
+    align-items: center;
+}
+
+/* --- Tab Styles --- */
+.tabContainer {
+    margin-bottom: 1.5rem;
+    border-bottom: 2px solid var(--border-color);
+    display: flex;
+}
+
+.tabButton {
+    padding: 0.8rem 1.5rem;
+    cursor: pointer;
+    border: none;
+    border-bottom: 3px solid transparent; /* Hidden border for inactive */
+    background-color: transparent;
+    font-size: 1.1rem;
+    font-weight: 500;
+    color: var(--text-secondary);
+    transition: color 0.2s ease, border-color 0.2s ease;
+    margin-bottom: -2px; /* Overlap container border */
+}
+
+.tabButton:hover {
+    color: var(--text-primary);
+}
+
+.tabButton.activeTab {
+    color: var(--primary-color);
+    border-bottom-color: var(--primary-color);
+    font-weight: 600;
+}
+
+
+/* Filter Section Styles */
+.filterSection {
+    background-color: var(--white);
+    padding: 1rem 1.5rem 1.5rem 1.5rem;
+    border-radius: var(--border-radius-md);
+    margin-bottom: 1.5rem;
+    box-shadow: var(--shadow-sm);
+    display: flex;
+    align-items: flex-end;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+}
+.filterIcon {
+    color: var(--text-secondary);
+    margin-bottom: 1rem;
+    font-size: 1.2rem;
+}
+.filterInputGroup > div {
+     margin-bottom: 0 !important;
+}
+.filterInputGroup label {
+    font-size: 0.85rem;
+}
+
+
+/* Status Badge Styles */
+.status {
+    padding: 0.25rem 0.7rem;
+    border-radius: 12px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: var(--white);
+    text-transform: capitalize;
+    display: inline-block;
+    min-width: 60px;
+    text-align: center;
+    border: 1px solid transparent;
+}
+.status.pending { background-color: var(--warning-color); border-color: #e6a00f; color: #333; }
+.status.paid { background-color: var(--success-color); border-color: #218838; }
+.status.partially_paid { background-color: var(--secondary-color); border-color: #1e68d4; }
+
+
+/* Action buttons */
+.actionButtons { display: flex; gap: 0.5rem; align-items: center; }
+.actionButton { padding: 0.4rem 0.8rem; font-size: 0.85rem; }
+.actionButton svg { margin-right: 0.4rem; }
+
+/* Error styling */
+.error { color: var(--danger-color); background-color: #f8d7da; border: 1px solid #f5c6cb; padding: 1rem; border-radius: var(--border-radius-sm); margin-top: 1rem; }

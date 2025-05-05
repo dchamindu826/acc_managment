@@ -1,0 +1,31 @@
+/* src/layouts/AdminLayout.module.css */
+.adminLayout {
+    display: flex;
+    min-height: 100vh; /* Ensure layout takes full height */
+    background-color: var(--background-light);
+  }
+  
+  .mainContent {
+    flex-grow: 1; /* Take up remaining space */
+     /* padding-left: var(--sidebar-width);  No, Topbar handles margin */
+     display: flex;
+     flex-direction: column;
+     transition: padding-left 0.3s ease; /* Match sidebar transition */
+  }
+  
+  .pageContent {
+    padding: 2rem;
+    flex-grow: 1; /* Ensure content area fills space below Topbar */
+    margin-left: var(--sidebar-width); /* Account for sidebar */
+     margin-top: var(--topbar-height); /* Account for sticky/fixed topbar */
+     transition: margin-left 0.3s ease;
+     /* overflow-y: auto; /* Allow content scrolling if needed */
+  }
+  
+   /* Responsive: Adjust content margin when sidebar collapses */
+  @media (max-width: 768px) {
+     .pageContent {
+         margin-left: 60px; /* Collapsed sidebar width */
+         padding: 1rem; /* Reduce padding */
+     }
+  }

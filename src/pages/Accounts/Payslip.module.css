@@ -1,0 +1,132 @@
+/* src/pages/Accounts/Payslip.module.css */
+@import '../../styles/variables.css';
+
+.payslipContainer {
+  border: 1px solid #ccc;
+  padding: 25px 35px; /* More padding */
+  width: 600px; /* Adjust width - approx A5/half-letter feel */
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Cleaner font */
+  font-size: 13px;
+  background-color: #fff;
+  color: #333;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Optional shadow */
+  margin: auto; /* Center if needed when rendered standalone */
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start; /* Align items top */
+  border-bottom: 2px solid var(--primary-color);
+  padding-bottom: 15px;
+  margin-bottom: 20px;
+}
+
+.companyInfo h2 {
+  margin: 0 0 5px 0;
+  color: var(--primary-color);
+  font-size: 1.5em;
+}
+.companyInfo p {
+    margin: 0;
+    font-size: 0.9em;
+    color: var(--text-secondary);
+}
+/* .companyInfo img { max-width: 100px; } */
+
+.title {
+    margin: 0;
+    font-size: 1.8em;
+    font-weight: bold;
+    color: var(--text-primary);
+    align-self: center; /* Center title vertically */
+}
+
+.periodInfo p {
+    margin: 0;
+    font-size: 0.9em;
+    text-align: right;
+}
+
+.employeeInfo {
+  margin-bottom: 25px;
+  border: 1px solid #eee;
+  padding: 10px 15px;
+  border-radius: var(--border-radius-sm);
+  background-color: #f8f9fa;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 5px 15px;
+}
+.employeeInfo div {
+    font-size: 0.95em;
+}
+
+.detailsGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr; /* Two columns for earnings/deductions */
+  gap: 30px; /* Space between columns */
+  margin-bottom: 25px;
+}
+
+.column h4 {
+  margin-top: 0;
+  margin-bottom: 10px;
+  border-bottom: 1px solid #ddd;
+  padding-bottom: 8px;
+  font-size: 1.1em;
+  color: var(--text-secondary);
+}
+
+.column table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.column td {
+  padding: 6px 0; /* Vertical padding only */
+  font-size: 0.95em;
+}
+
+.column td.amount {
+  text-align: right;
+  font-weight: 500;
+}
+
+.totalRow td {
+    border-top: 1px solid #ccc;
+    padding-top: 8px;
+    margin-top: 5px; /* Visual separation */
+    font-size: 1em;
+}
+
+.netPaySummary {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: var(--primary-color);
+  color: var(--white);
+  padding: 12px 20px;
+  border-radius: var(--border-radius-md);
+  margin-top: 15px;
+}
+
+.netPayLabel {
+  font-size: 1.1em;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.netPayValue {
+  font-size: 1.3em;
+  font-weight: bold;
+}
+
+.footer {
+  margin-top: 30px;
+  padding-top: 15px;
+  border-top: 1px solid #eee;
+  text-align: center;
+  font-size: 0.8em;
+  color: #888;
+}

@@ -1,0 +1,84 @@
+/* src/components/Button/Button.module.css */
+@import '../../styles/variables.css'; /* Import global CSS variables */
+
+.button {
+  display: inline-flex; /* Align items nicely, especially with icon/spinner */
+  justify-content: center;
+  align-items: center;
+  padding: 0.75rem 1.5rem;
+  border: none;
+  border-radius: var(--border-radius-md);
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  text-decoration: none;
+  transition: background-color 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease, opacity 0.2s ease;
+  box-shadow: var(--shadow-sm);
+  line-height: 1.5; /* Ensure text is vertically centered */
+  white-space: nowrap; /* Prevent text wrapping */
+}
+
+.button:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+}
+
+.button:active:not(:disabled) {
+    transform: translateY(0px);
+    box-shadow: var(--shadow-sm);
+}
+
+/* -- Variants -- */
+.primary {
+  background: var(--gradient-bg);
+  color: var(--white);
+}
+
+.secondary {
+  background-color: var(--white);
+  color: var(--primary-color);
+  border: 1px solid var(--primary-color);
+}
+
+.secondary:hover:not(:disabled) {
+  background-color: rgba(106, 17, 203, 0.05); /* Light primary background */
+}
+
+.danger {
+  background-color: var(--danger-color);
+  color: var(--white);
+}
+
+.danger:hover:not(:disabled) {
+  background-color: #c82333; /* Darker red */
+}
+
+/* -- States -- */
+.button:disabled {
+  opacity: 0.65;
+  cursor: not-allowed;
+  box-shadow: none;
+  transform: none;
+}
+
+
+/* Loading Spinner Styles */
+.spinner {
+  animation: spin 1s linear infinite;
+  font-size: 1.2em; /* Adjust spinner size */
+  /* If button text should be hidden while loading, add more styles */
+  /* For example, hide children when loading: */
+  /* .loading > *:not(.spinner) { */
+  /* visibility: hidden; */
+  /* opacity: 0; */
+  /* } */
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}

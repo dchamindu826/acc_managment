@@ -1,0 +1,83 @@
+/* src/pages/Employers/EmployerCard.module.css */
+@import '../../styles/variables.css';
+
+.card {
+  background-color: var(--white);
+  border-radius: var(--border-radius-lg);
+  box-shadow: var(--shadow-md);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-lg);
+}
+
+.cardHeader {
+  background: var(--gradient-bg);
+  color: var(--white);
+  padding: 1rem 1.5rem;
+}
+
+.cardHeader h3 {
+  margin: 0 0 0.25rem 0;
+  font-size: 1.3rem;
+}
+
+.roleDept {
+  margin: 0;
+  font-size: 0.9rem;
+  opacity: 0.9;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+.roleDept svg {
+    margin-right: 0.2rem;
+}
+
+
+.cardBody {
+  padding: 1.5rem;
+  flex-grow: 1; /* Allow body to take available space */
+  display: grid; /* Use grid for details */
+  gap: 0.8rem; /* Space between detail items */
+}
+
+.detailItem {
+  display: flex;
+  align-items: center; /* Align icon and text vertically */
+  font-size: 0.95rem;
+  color: var(--text-secondary);
+  line-height: 1.5;
+}
+
+.detailItem svg {
+  margin-right: 0.8rem;
+  color: var(--primary-color);
+  min-width: 16px; /* Ensure icon space */
+  flex-shrink: 0;
+}
+.detailItem span {
+    color: var(--text-primary); /* Make the detail text primary color */
+}
+
+.cardFooter {
+  background-color: var(--background-light);
+  padding: 0.8rem 1.5rem;
+  border-top: 1px solid var(--border-color);
+  display: flex;
+  justify-content: flex-end; /* Align buttons to the right */
+  gap: 0.5rem;
+}
+
+.actionButton {
+    padding: 0.4rem 0.8rem; /* Smaller buttons */
+    font-size: 0.85rem;
+}
+.actionButton svg {
+    margin-right: 0.4rem;
+}

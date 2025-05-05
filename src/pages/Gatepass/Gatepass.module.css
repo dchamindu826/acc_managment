@@ -1,0 +1,54 @@
+/* src/pages/Gatepass/Gatepass.module.css */
+@import '../../styles/variables.css';
+
+.gatepassPage {
+  padding: 1rem;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid var(--border-color);
+  flex-wrap: wrap;
+}
+
+.header h1 {
+  margin: 0 1rem 0 0;
+}
+
+.headerActions {
+    display: flex;
+    gap: 0.8rem;
+    align-items: center;
+}
+
+/* Filter Section Styles */
+.filterSection {
+    background-color: var(--white);
+    padding: 1rem 1.5rem 1.5rem 1.5rem;
+    border-radius: var(--border-radius-md);
+    margin-bottom: 1.5rem;
+    box-shadow: var(--shadow-sm);
+    display: flex;
+    align-items: flex-end;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+}
+.filterIcon {
+    color: var(--text-secondary);
+    margin-bottom: 1rem;
+    font-size: 1.2rem;
+}
+.filterInputGroup > div { margin-bottom: 0 !important; }
+.filterInputGroup label { font-size: 0.85rem; }
+
+/* Action buttons in table */
+.actionButtons { display: flex; gap: 0.5rem; align-items: center; }
+.actionButton { padding: 0.4rem 0.8rem; font-size: 0.85rem; }
+.actionButton svg { margin-right: 0.4rem; }
+
+/* Error styling */
+.error { color: var(--danger-color); background-color: #f8d7da; border: 1px solid #f5c6cb; padding: 1rem; border-radius: var(--border-radius-sm); margin-top: 1rem; }

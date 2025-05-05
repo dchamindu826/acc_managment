@@ -1,0 +1,94 @@
+/* src/pages/Notes/NoteCard.module.css */
+@import '../../styles/variables.css';
+
+.noteCard {
+  background-color: var(--white);
+  border-radius: var(--border-radius-md);
+  box-shadow: var(--shadow-sm);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  border-left: 5px solid var(--text-secondary); /* Default border */
+  transition: border-color 0.3s ease;
+}
+
+.noteCard.pending { border-left-color: var(--primary-color); }
+.noteCard.done { border-left-color: var(--success-color); opacity: 0.7; }
+.noteCard.overdue { border-left-color: var(--danger-color); }
+.noteCard.dueToday { border-left-color: var(--warning-color); }
+
+
+.cardContent {
+  padding: 1rem 1.2rem;
+  flex-grow: 1;
+}
+
+.noteText {
+  margin: 0;
+  line-height: 1.6;
+  color: var(--text-primary);
+  white-space: pre-wrap; /* Respect line breaks in the note */
+}
+
+.cardFooter {
+  background-color: var(--background-light);
+  padding: 0.8rem 1.2rem;
+  border-top: 1px solid var(--border-color);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap; /* Allow wrapping on small screens */
+  gap: 0.5rem;
+}
+
+.dateTimeStatus {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    flex-wrap: wrap;
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+}
+
+.dateTime {
+    display: inline-flex;
+    align-items: center;
+}
+.dateTime svg {
+    margin-right: 0.3rem;
+}
+
+/* Status Badge */
+.status {
+    padding: 0.15rem 0.5rem;
+    border-radius: 10px;
+    font-weight: 600;
+    color: var(--white);
+    text-transform: capitalize;
+}
+.status.pending { background-color: var(--primary-color); }
+.status.done { background-color: var(--success-color); }
+
+/* Overdue / Today Badges */
+.overdueBadge, .todayBadge {
+    padding: 0.15rem 0.5rem;
+    border-radius: 10px;
+    font-weight: 600;
+    color: var(--white);
+}
+.overdueBadge { background-color: var(--danger-color); }
+.todayBadge { background-color: var(--warning-color); color: #333; }
+
+
+.cardActions {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.actionButton {
+    padding: 0.3rem 0.6rem; /* Smaller buttons */
+    font-size: 0.8rem;
+}
+.actionButton svg {
+    margin-right: 0.3rem;
+}

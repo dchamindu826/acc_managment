@@ -1,0 +1,84 @@
+/* src/components/Table/Table.module.css */
+@import '../../styles/variables.css';
+
+.tableWrapper {
+  position: relative; /* Needed for absolute positioning of loading overlay */
+  width: 100%;
+  margin-bottom: 1rem; /* Add some space below the table */
+}
+
+.loadingOverlay {
+  position: absolute;
+  inset: 0; /* Cover the entire wrapper */
+  background-color: rgba(255, 255, 255, 0.75); /* White overlay */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 10; /* Ensure overlay is above table content */
+  border-radius: var(--border-radius-md); /* Match container radius */
+}
+
+.tableContainer {
+  overflow-x: auto; /* Enable horizontal scrolling on small screens */
+  width: 100%;
+  border: 1px solid var(--border-color);
+  border-radius: var(--border-radius-md);
+  background-color: var(--white);
+  box-shadow: var(--shadow-sm);
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse; /* Remove gaps between cells */
+  min-width: 600px; /* Ensure table has a minimum width for horizontal scroll */
+}
+
+.table th,
+.table td {
+  padding: 0.9rem 1.2rem;
+  text-align: left;
+  border-bottom: 1px solid var(--border-color);
+  vertical-align: middle; /* Align cell content vertically */
+  white-space: nowrap; /* Prevent text wrapping initially, adjust if needed */
+}
+
+.table th {
+  background-color: var(--background-dark);
+  font-weight: 600;
+  color: var(--text-secondary);
+  font-size: 0.85rem; /* Slightly smaller header font */
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  position: sticky; /* Make header sticky during vertical scroll (optional) */
+  top: 0; /* Required for sticky header */
+  z-index: 5; /* Above table body */
+}
+
+.table tbody tr:last-child td {
+  border-bottom: none; /* Remove border from the last row */
+}
+
+.table tbody tr:hover {
+  background-color: var(--background-light); /* Hover effect */
+}
+
+.clickableRow:hover {
+   cursor: pointer;
+}
+
+.clickableRow:focus {
+    outline: 2px solid var(--primary-color); /* Focus indicator for keyboard navigation */
+    outline-offset: -1px;
+}
+
+
+.noDataRow td {
+  text-align: center;
+  padding: 2.5rem 1rem;
+  color: var(--text-secondary);
+  font-style: italic;
+  font-size: 1rem;
+}
+
+/* Optional: Style specific cell content if needed */
+/* Example: .table td:first-child { font-weight: 500; } */

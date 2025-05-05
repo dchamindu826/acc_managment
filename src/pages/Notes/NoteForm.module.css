@@ -1,0 +1,68 @@
+/* src/pages/Notes/NoteForm.module.css */
+@import '../../styles/variables.css';
+
+.noteForm {
+    padding: 0.5rem 0;
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+}
+
+/* Style textarea if InputField uses it */
+.contentArea > textarea {
+    min-height: 80px;
+    resize: vertical; /* Allow vertical resize */
+}
+
+.dateTimeRow {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+    align-items: flex-end;
+}
+
+/* Ensure grid items don't have extra bottom margin if InputField adds it */
+.dateTimeRow > div {
+    margin-bottom: 0 !important;
+}
+
+
+/* Styles for status dropdown if needed */
+.formField {
+    display: flex;
+    flex-direction: column;
+}
+.label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: 500;
+  color: var(--text-secondary);
+  font-size: 0.95rem;
+}
+.selectInput {
+  display: block;
+  width: 100%;
+  padding: 0.75rem 1rem;
+  font-size: 1rem;
+  line-height: 1.5;
+  color: var(--text-primary);
+  background-color: var(--white);
+  border: 1px solid var(--border-color);
+  border-radius: var(--border-radius-sm);
+  height: calc(1.5em + 1.5rem + 2px);
+}
+.selectInput:focus {
+  border-color: var(--primary-color);
+  outline: 0;
+  box-shadow: 0 0 0 0.2rem rgba(106, 17, 203, 0.25);
+}
+
+
+.formActions {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-top: 1.5rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid var(--border-color);
+}

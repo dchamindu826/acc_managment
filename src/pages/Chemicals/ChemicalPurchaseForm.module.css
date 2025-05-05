@@ -1,0 +1,32 @@
+/* src/pages/Chemicals/ChemicalPurchaseForm.module.css */
+@import '../../styles/variables.css';
+
+.purchaseForm {
+    padding: 0.5rem 0;
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem; /* Consistent spacing between fields */
+}
+
+.chemicalInfo {
+    font-size: 1rem;
+    color: var(--text-secondary);
+    background-color: var(--background-light);
+    padding: 0.8rem 1rem;
+    border-radius: var(--border-radius-sm);
+    border: 1px solid var(--border-color);
+    margin-bottom: 0.5rem; /* Add some space below */
+}
+.chemicalInfo strong {
+    color: var(--text-primary);
+    font-weight: 600;
+}
+
+.formActions {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-top: 1rem; /* Reduced top margin */
+    padding-top: 1.5rem;
+    border-top: 1px solid var(--border-color);
+}

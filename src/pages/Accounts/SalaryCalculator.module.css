@@ -1,0 +1,207 @@
+/* src/pages/Accounts/SalaryCalculator.module.css */
+@import '../../styles/variables.css';
+
+.calculatorContainer {
+    margin-top: 1rem;
+    position: relative; /* For loading spinner overlay */
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Two equal columns */
+    gap: 2rem; /* Increased gap between columns */
+    align-items: start; /* Align items to the top of their grid area */
+}
+
+/* Styles for input fields section */
+.inputSection {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem; /* Consistent spacing between input groups */
+}
+
+/* Inherited label style from InputField (or define locally if needed) */
+.label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: 500;
+  color: var(--text-secondary);
+  font-size: 0.95rem;
+}
+
+/* Style select similarly to InputField */
+.selectInput {
+  display: block;
+  width: 100%;
+  padding: 0.75rem 1rem;
+  font-size: 1rem;
+  line-height: 1.5;
+  color: var(--text-primary);
+  background-color: var(--white);
+  background-clip: padding-box;
+  border: 1px solid var(--border-color);
+  border-radius: var(--border-radius-sm);
+  transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+  height: calc(1.5em + 1.5rem + 2px); /* Match InputField height */
+  /* No margin-bottom here, handled by parent container gap or .formField */
+}
+.selectInput:focus {
+  border-color: var(--primary-color);
+  outline: 0;
+  box-shadow: 0 0 0 0.2rem rgba(106, 17, 203, 0.25);
+}
+
+.formField {
+     /* Wrapper for label + select if needed for spacing */
+     margin-bottom: 1.25rem; /* Add margin if InputField component doesn't wrap select */
+}
+
+
+/* Style for grouping amount and reason */
+.inputGroupWithReason {
+    display: grid;
+    grid-template-columns: 1fr auto; /* Amount takes most space, reason takes remaining */
+    gap: 0.8rem; /* Space between amount and reason */
+    align-items: flex-end; /* Align items to bottom if labels make them uneven */
+    /* Override InputField margin-bottom for the group */
+    & > div { /* Target the InputField wrapper divs inside */
+        margin-bottom: 0 !important;
+    }
+    /* Group itself doesn't need margin-bottom if parent (.inputSection) uses gap */
+}
+
+/* Ensure InputField inside group takes full width of its column */
+.inputGroupWithReason > div {
+    width: 100%;
+}
+
+
+/* Styles for results section */
+.resultsSection {
+    background-color: var(--background-light);
+    padding: 1.5rem;
+    border-radius: var(--border-radius-md);
+    border: 1px solid var(--border-color);
+}
+
+.resultsSection h3 {
+    margin-top: 0;
+    margin-bottom: 1.5rem;
+    color: var(--primary-color);
+    text-align: center;
+    border-bottom: 1px solid var(--border-color);
+    padding-bottom: 0.8rem;
+    font-size: 1.3rem;
+    font-weight: 600;
+}
+
+.resultsGrid {
+    display: grid;
+    gap: 0.8rem;
+}
+
+.resultItem {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.6rem 0; /* Adjusted padding */
+    border-bottom: 1px dotted var(--border-color);
+    font-size: 0.95rem;
+    flex-wrap: wrap; /* Allow wrapping if needed */
+}
+.resultItem:last-child {
+    border-bottom: none;
+}
+
+.resultLabel {
+    color: var(--text-secondary);
+    margin-right: 1rem; /* Space between label and value */
+}
+
+.resultValue {
+    font-weight: 500;
+    color: var(--text-primary);
+    text-align: right;
+}
+
+.subTotal {
+    border-top: 1px solid #ccc;
+    margin-top: 0.5rem;
+    padding-top: 0.8rem;
+}
+
+.highlight {
+    font-weight: 600;
+    font-size: 1.05rem;
+}
+.netPayItem {
+     border-top: 2px solid var(--primary-color);
+     margin-top: 0.8rem;
+     padding-top: 1rem;
+     padding-bottom: 0.5rem; /* Less padding below net pay */
+}
+.highlightNet {
+    font-weight: 700;
+    font-size: 1.2rem;
+    color: var(--success-color);
+}
+
+.placeholderText {
+    text-align: center;
+    color: var(--text-secondary);
+    font-style: italic;
+    margin-top: 2rem;
+    padding: 1rem;
+}
+
+.error {
+   color: var(--danger-color);
+   margin-top: 1rem;
+   font-size: 0.9rem;
+}
+
+/* Container for the generate button */
+.generateButtonContainer {
+    grid-column: 1 / -1; /* Make button container span both columns */
+    text-align: center; /* Center the button */
+    margin-top: 1.5rem; /* Space above the button */
+    padding-top: 1rem;
+    border-top: 1px solid var(--border-color);
+}
+
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .grid {
+        grid-template-columns: 1fr; /* Stack columns on smaller screens */
+    }
+    .resultsSection {
+        margin-top: 2rem;
+    }
+    .generateButtonContainer {
+        margin-top: 1.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .inputGroupWithReason {
+        grid-template-columns: 1fr; /* Stack amount and reason */
+        gap: 0.5rem;
+        /* Re-apply margin to InputFields when stacked */
+        & > div {
+            margin-bottom: 1.25rem !important;
+        }
+        & > div:last-child {
+            margin-bottom: 0 !important; /* Remove margin from last item */
+        }
+    }
+     .resultsSection {
+         padding: 1rem;
+     }
+     .resultItem {
+         font-size: 0.9rem;
+     }
+     .highlightNet {
+         font-size: 1.1rem;
+     }
+}

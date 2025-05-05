@@ -1,0 +1,44 @@
+/* src/pages/Chemicals/Chemicals.module.css */
+@import '../../styles/variables.css';
+
+.chemicalsPage {
+  padding: 1rem;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.header h1 {
+  margin: 0;
+}
+
+/* Actions buttons in table - Reuse or adapt from other sections */
+.actionButtons {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+}
+
+.actionButton {
+    padding: 0.4rem 0.8rem;
+    font-size: 0.85rem;
+}
+.actionButton svg {
+    margin-right: 0.4rem;
+}
+
+/* Error styling */
+.error {
+    color: var(--danger-color);
+    background-color: #f8d7da;
+    border: 1px solid #f5c6cb;
+    padding: 1rem;
+    border-radius: var(--border-radius-sm);
+    margin-top: 1rem;
+}

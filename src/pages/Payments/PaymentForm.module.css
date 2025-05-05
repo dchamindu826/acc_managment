@@ -1,0 +1,14 @@
+/* src/pages/Payments/PaymentForm.module.css */
+@import '../../styles/variables.css';
+
+
+
+/* Styles for the button container div */
+.formActions {
+    display: flex;
+    justify-content: center; /* Center buttons horizontally */
+    gap: 1rem; /* Space between buttons */
+    margin-top: 1.5rem; /* Space above the buttons */
+    padding-top: 1rem; /* Optional: Add padding above buttons */
+    /* border-top: 1px solid var(--border-color); /* Optional: Add a separator line */
+}

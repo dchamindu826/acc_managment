@@ -1,0 +1,36 @@
+/* src/pages/Employers/EmployerForm.module.css */
+@import '../../styles/variables.css';
+
+.employerForm {
+    padding: 0.5rem 0;
+}
+
+/* Use grid for better layout with many fields */
+.formGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Responsive grid */
+    gap: 1rem 1.5rem; /* Row gap, Column gap */
+}
+
+/* Make address field span full width if needed */
+.addressField {
+    grid-column: 1 / -1; /* Span across all columns */
+}
+/* Target the input/textarea inside the address InputField component */
+.addressField > input,
+.addressField > textarea {
+    min-height: 80px; /* Example height for address */
+    /* InputField component should handle textarea if type="textarea" was implemented */
+    /* Or style textarea directly if InputField doesn't support it */
+    /* For now, InputField type="text" might work ok */
+}
+
+
+.formActions {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-top: 2rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid var(--border-color);
+}

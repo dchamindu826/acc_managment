@@ -1,0 +1,66 @@
+/* src/pages/Outstanding/OutstandingUpdateForm.module.css */
+@import '../../styles/variables.css';
+
+.updateForm {
+    padding: 0.5rem 0;
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+}
+
+.recordInfo {
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+    margin-bottom: 0.5rem;
+    text-align: center;
+    background-color: var(--background-light);
+    padding: 0.5rem;
+    border-radius: var(--border-radius-sm);
+}
+.recordInfo strong {
+    color: var(--text-primary);
+}
+
+/* Wrapper needed if label is separate */
+.formField {
+    display: flex;
+    flex-direction: column;
+     /* gap: 0.5rem; /* Space between label and select */
+}
+
+.label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: 500;
+  color: var(--text-secondary);
+  font-size: 0.95rem;
+}
+
+.selectInput {
+  display: block;
+  width: 100%;
+  padding: 0.75rem 1rem;
+  font-size: 1rem;
+  line-height: 1.5;
+  color: var(--text-primary);
+  background-color: var(--white);
+  background-clip: padding-box;
+  border: 1px solid var(--border-color);
+  border-radius: var(--border-radius-sm);
+  transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+  height: calc(1.5em + 1.5rem + 2px); /* Match InputField height */
+}
+.selectInput:focus {
+  border-color: var(--primary-color);
+  outline: 0;
+  box-shadow: 0 0 0 0.2rem rgba(106, 17, 203, 0.25);
+}
+
+.formActions {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-top: 1rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid var(--border-color);
+}

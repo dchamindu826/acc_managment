@@ -1,0 +1,62 @@
+/* src/pages/Outstanding/OutstandingForm.module.css */
+@import '../../styles/variables.css';
+
+.outstandingForm {
+    padding: 0.5rem 0;
+}
+
+/* Use grid for better layout */
+.formGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem 1.5rem; /* Row gap, Column gap */
+}
+
+/* Wrapper needed if label is separate from select */
+.formField {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 1.25rem; /* Add margin if InputField component doesn't wrap */
+}
+/* Remove bottom margin from InputField component itself */
+.formGrid > div:not(.formField) { /* Target InputField wrapper */
+     margin-bottom: 0 !important;
+}
+
+
+.label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: 500;
+  color: var(--text-secondary);
+  font-size: 0.95rem;
+}
+
+.selectInput {
+  display: block;
+  width: 100%;
+  padding: 0.75rem 1rem;
+  font-size: 1rem;
+  line-height: 1.5;
+  color: var(--text-primary);
+  background-color: var(--white);
+  background-clip: padding-box;
+  border: 1px solid var(--border-color);
+  border-radius: var(--border-radius-sm);
+  transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+  height: calc(1.5em + 1.5rem + 2px);
+}
+.selectInput:focus {
+  border-color: var(--primary-color);
+  outline: 0;
+  box-shadow: 0 0 0 0.2rem rgba(106, 17, 203, 0.25);
+}
+
+.formActions {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-top: 2rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid var(--border-color);
+}

@@ -1,0 +1,191 @@
+/* src/pages/Payments/Payments.module.css */
+.paymentsPage {
+    padding: 1rem; /* Internal padding */
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.5rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.header h1 {
+    margin: 0;
+    color: var(--text-primary);
+}
+
+/* Style the Add Button (replace with Button component later) */
+.addButton {
+    background: var(--gradient-bg);
+    color: white;
+    border: none;
+    padding: 0.7rem 1.2rem;
+    border-radius: var(--border-radius-md);
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 1rem;
+    font-weight: 500;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    box-shadow: var(--shadow-sm);
+}
+.addButton:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-md);
+}
+
+.filterSection {
+    background-color: var(--white);
+    padding: 1rem 1.5rem;
+    border-radius: var(--border-radius-md);
+    margin-bottom: 1.5rem;
+    box-shadow: var(--shadow-sm);
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    flex-wrap: wrap; /* Allow wrapping on smaller screens */
+    font-size: 0.95rem;
+    color: var(--text-secondary);
+}
+
+.filterInput {
+    padding: 0.5rem 0.8rem;
+    font-size: 0.9rem;
+    margin-bottom: 0; /* Override global form margin */
+    max-width: 180px; /* Limit width */
+}
+
+.exportButton {
+    margin-left: auto; /* Push export button to the right */
+    /* Style like Add Button or create specific style */
+    background-color: var(--success-color);
+     color: white;
+    border: none;
+    padding: 0.6rem 1rem;
+    border-radius: var(--border-radius-sm);
+     cursor: pointer;
+     display: inline-flex;
+     align-items: center;
+     gap: 0.5rem;
+}
+
+.paymentsList {
+    margin-top: 1rem;
+}
+
+.dayGroup {
+    margin-bottom: 2rem;
+    background-color: var(--white);
+    border-radius: var(--border-radius-lg);
+    box-shadow: var(--shadow-md);
+    overflow: hidden; /* Ensures child elements adhere to border radius */
+}
+
+.dayHeader {
+    background: var(--gradient-bg);
+    color: var(--white);
+    padding: 0.8rem 1.5rem;
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin: 0; /* Remove default heading margin */
+}
+
+.paymentsTable {
+    width: 100%;
+    border-collapse: collapse; /* Important for clean look */
+}
+
+.paymentsTable th,
+.paymentsTable td {
+    padding: 0.8rem 1.5rem;
+    text-align: left;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.paymentsTable th {
+    background-color: var(--background-dark);
+    font-weight: 600;
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.paymentsTable tbody tr:last-child td {
+    border-bottom: none; /* Remove border from last row in group */
+}
+
+.paymentsTable tbody tr:hover {
+    background-color: var(--background-light);
+}
+
+ .paymentsTable td button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: var(--text-secondary);
+    margin-right: 0.8rem;
+    font-size: 1.1rem;
+    padding: 0.2rem;
+    transition: color 0.2s ease;
+ }
+
+  .paymentsTable td button:hover {
+      color: var(--primary-color);
+  }
+   .paymentsTable td button[title="Delete"]:hover {
+       color: var(--danger-color);
+   }
+
+
+.error {
+    color: var(--danger-color);
+    background-color: #f8d7da;
+    border: 1px solid #f5c6cb;
+    padding: 1rem;
+    border-radius: var(--border-radius-sm);
+    margin-top: 1rem;
+}
+
+/* Temporary Modal Styles - Replace with proper Modal component */
+.tempModalOverlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1050;
+}
+.tempModalContent {
+    background-color: white;
+    padding: 2rem;
+    border-radius: var(--border-radius-lg);
+    box-shadow: var(--shadow-lg);
+    min-width: 400px; /* Adjust as needed */
+}
+ .tempModalContent h2 {
+     margin-top: 0;
+     margin-bottom: 1.5rem;
+     text-align: center;
+ }
+ .actionButtons {
+    display: flex;
+  gap: 0.5rem;
+  }
+  
+  /* Optional: Adjust size/padding of action buttons if Button component doesn't have size prop yet */
+  .actionButton {
+      padding: 0.4rem 0.6rem; /* Smaller padding */
+      font-size: 0.9rem; /* Slightly smaller font */
+  }
+  .actionButton svg { /* Target icon inside button */
+      font-size: 1em; /* Make icon match button font size */
+  }

@@ -1,0 +1,45 @@
+/* src/pages/Employers/Employers.module.css */
+@import '../../styles/variables.css';
+
+.employersPage {
+  padding: 1rem;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.header h1 {
+  margin: 0;
+}
+
+.cardGrid {
+  display: grid;
+  /* Adjust minmax for desired card width and responsiveness */
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 1.5rem; /* Space between cards */
+  margin-top: 1rem;
+}
+
+/* Style for the "No employers found" message */
+.cardGrid > p {
+    grid-column: 1 / -1; /* Span message across grid */
+    text-align: center;
+    padding: 2rem;
+    color: var(--text-secondary);
+    font-style: italic;
+}
+
+.error {
+    color: var(--danger-color);
+    background-color: #f8d7da;
+    border: 1px solid #f5c6cb;
+    padding: 1rem;
+    border-radius: var(--border-radius-sm);
+    margin-top: 1rem;
+}

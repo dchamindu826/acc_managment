@@ -1,0 +1,147 @@
+/* src/pages/Accounts/Accounts.module.css */
+@import '../../styles/variables.css';
+
+.accountsPage {
+  padding: 1rem;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.header h1 {
+  margin: 0;
+}
+
+/* --- Common Section Styling --- */
+.summarySection,
+.chartSection,
+.recordsSection,
+.salarySection {
+    margin-bottom: 2rem;
+    background-color: var(--white);
+    padding: 1.5rem;
+    border-radius: var(--border-radius-lg);
+    box-shadow: var(--shadow-md);
+}
+
+.summarySection h2,
+.chartSection h2,
+.recordsSection h2,
+.salarySection h2 {
+    margin-top: 0;
+    margin-bottom: 1.5rem; /* Consistent spacing */
+    font-size: 1.4rem; /* Consistent heading size */
+    font-weight: 600;
+    color: var(--text-primary);
+    border-bottom: 1px solid var(--border-color);
+    padding-bottom: 0.8rem;
+}
+
+
+/* --- Summary Section --- */
+.summaryContainer {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Responsive grid */
+    gap: 1.5rem;
+}
+
+.summaryCard {
+    background-color: var(--background-light); /* Slightly different bg */
+    padding: 1.5rem;
+    border-radius: var(--border-radius-md);
+    /* box-shadow: var(--shadow-sm); */
+    border: 1px solid var(--border-color);
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    border-left: 5px solid;
+}
+
+.summaryLabel {
+    font-size: 0.95rem;
+    color: var(--text-secondary);
+    margin-bottom: 0.5rem;
+}
+
+.summaryValue {
+    font-size: 1.8rem;
+    font-weight: 600;
+}
+
+.credit { border-left-color: var(--success-color); }
+.credit .summaryValue { color: var(--success-color); }
+.debit { border-left-color: var(--danger-color); }
+.debit .summaryValue { color: var(--danger-color); }
+
+
+/* --- Chart Section --- */
+.chartContainer {
+    min-height: 370px; /* Ensure chart has space */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--text-secondary);
+    padding-top: 1rem;
+}
+
+
+/* --- Records Section --- */
+.sectionHeader { /* Optional header for table section if needed */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem; /* Space between header and table */
+}
+/* Styles for Table actions (reuse payments styles or create new ones) */
+.actionButtons {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center; /* Ensure vertical alignment */
+}
+.actionButton { /* Style for Edit/Delete buttons in records table */
+    padding: 0.4rem 0.6rem;
+    font-size: 0.9rem;
+}
+.actionButton svg {
+    font-size: 1em;
+}
+/* Style for Record Type */
+.recordType {
+    padding: 0.2rem 0.6rem;
+    border-radius: var(--border-radius-sm);
+    font-size: 0.85rem;
+    font-weight: 500;
+    color: var(--white);
+    text-transform: capitalize;
+    display: inline-block;
+    min-width: 50px; /* Example minimum width */
+    text-align: center;
+}
+.recordType.credit {
+    background-color: var(--success-color);
+}
+.recordType.debit {
+     background-color: var(--danger-color);
+}
+
+/* --- Salary Section --- */
+/* Styles are mostly in SalaryCalculator.module.css */
+/* Add any wrapper styles here if needed */
+
+
+/* --- Common Error Style --- */
+.error {
+    color: var(--danger-color);
+    background-color: #f8d7da;
+    border: 1px solid #f5c6cb;
+    padding: 1rem;
+    border-radius: var(--border-radius-sm);
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}

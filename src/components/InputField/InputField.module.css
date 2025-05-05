@@ -1,0 +1,57 @@
+/* src/components/InputField/InputField.module.css */
+@import '../../styles/variables.css';
+
+.inputGroup {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 1.25rem; /* Space below the input group */
+  width: 100%; /* Take full available width */
+}
+
+.label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: 500;
+  color: var(--text-secondary);
+  font-size: 0.95rem;
+}
+
+.requiredAsterisk {
+  color: var(--danger-color);
+  margin-left: 2px;
+}
+
+.input {
+  display: block;
+  width: 100%;
+  padding: 0.75rem 1rem;
+  font-size: 1rem;
+  line-height: 1.5;
+  color: var(--text-primary);
+  background-color: var(--white);
+  background-clip: padding-box;
+  border: 1px solid var(--border-color);
+  border-radius: var(--border-radius-sm);
+  transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+
+.input:focus {
+  border-color: var(--primary-color);
+  outline: 0;
+  box-shadow: 0 0 0 0.2rem rgba(106, 17, 203, 0.25); /* Focus shadow */
+}
+
+/* Style for when there is an error */
+.inputError {
+  border-color: var(--danger-color);
+}
+
+.inputError:focus {
+   box-shadow: 0 0 0 0.2rem rgba(220, 53, 69, 0.25); /* Red focus shadow */
+}
+
+.errorMessage {
+  color: var(--danger-color);
+  font-size: 0.85rem;
+  margin-top: 0.4rem; /* Space between input and error message */
+}

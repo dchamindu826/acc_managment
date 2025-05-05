@@ -1,0 +1,36 @@
+/* src/pages/Gatepass/GatepassForm.module.css */
+@import '../../styles/variables.css';
+
+.gatepassForm {
+    padding: 0.5rem 0;
+}
+
+.formGrid {
+    display: grid;
+    /* Adjust column definition for better layout */
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 1rem 1.5rem;
+}
+
+/* Make remarks and special note span full width */
+.fullWidthField {
+    grid-column: 1 / -1; /* Span across all columns */
+}
+/* Style textarea if InputField supports it */
+.fullWidthField > textarea {
+    min-height: 60px; /* Adjust height as needed */
+}
+
+/* Ensure grid items don't have extra bottom margin if InputField adds it */
+.formGrid > div {
+    margin-bottom: 0 !important;
+}
+
+.formActions {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-top: 2rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid var(--border-color);
+}

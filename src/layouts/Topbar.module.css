@@ -1,0 +1,57 @@
+/* src/layouts/Topbar.module.css */
+.topbar {
+    height: var(--topbar-height);
+    background-color: var(--white);
+    padding: 0 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: var(--shadow-sm);
+    position: sticky; /* Or fixed if needed */
+    top: 0;
+    z-index: 999; /* Below sidebar */
+     margin-left: var(--sidebar-width); /* Account for sidebar */
+     width: calc(100% - var(--sidebar-width));
+     transition: margin-left 0.3s ease, width 0.3s ease;
+  }
+  
+  .greeting {
+    font-size: 1.4rem;
+    font-weight: 600;
+    color: var(--text-primary);
+  }
+  
+  .timeInfo {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem; /* Space between date and time */
+    color: var(--text-secondary);
+  }
+  
+  .infoItem {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem; /* Space between icon and text */
+    font-size: 0.95rem;
+  }
+  
+  .icon {
+    color: var(--primary-color);
+     font-size: 1.1rem;
+  }
+  
+  /* Responsive: Adjust Topbar when sidebar collapses */
+  @media (max-width: 768px) {
+     .topbar {
+          margin-left: 60px; /* Collapsed sidebar width */
+          width: calc(100% - 60px);
+          padding: 0 1rem; /* Reduce padding */
+     }
+     .greeting {
+          font-size: 1.2rem;
+     }
+     .timeInfo {
+          gap: 0.8rem;
+     }
+     
+  }

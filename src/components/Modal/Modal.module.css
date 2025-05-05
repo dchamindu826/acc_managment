@@ -1,0 +1,74 @@
+/* src/components/Modal/Modal.module.css */
+@import '../../styles/variables.css';
+
+.overlay {
+  position: fixed;
+  inset: 0; /* Shortcut for top: 0; right: 0; bottom: 0; left: 0; */
+  background-color: rgba(0, 0, 0, 0.6); /* Semi-transparent black overlay */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1050; /* Ensure modal is on top */
+  padding: 1rem; /* Add padding for small screens */
+  overflow-y: auto; /* Allow scrolling if modal content is too tall */
+}
+
+.modalContent {
+  position: relative;
+  background: var(--white);
+  padding: 1.5rem 2rem;
+  border-radius: var(--border-radius-lg);
+  box-shadow: var(--shadow-lg);
+  width: 100%; /* Start with full width */
+  max-width: 550px; /* Max width for larger screens, adjust as needed */
+  max-height: 90vh; /* Max height to prevent overflow */
+  overflow-y: auto; /* Scroll inside the modal if content exceeds max-height */
+  z-index: 1051; /* Above overlay */
+}
+
+.modalHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 1rem;
+  margin-bottom: 1.5rem;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.modalTitle {
+  margin: 0;
+  font-size: 1.4rem;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.closeButton {
+  background: none;
+  border: none;
+  font-size: 1.6rem; /* Make icon slightly larger */
+  cursor: pointer;
+  color: var(--text-secondary);
+  padding: 0.25rem;
+  line-height: 1; /* Ensure icon aligns well */
+  transition: color 0.2s ease;
+}
+
+.closeButton:hover {
+  color: var(--text-primary);
+}
+
+
+
+/* Responsive adjustments if needed */
+@media (max-width: 600px) {
+    .modalContent {
+        padding: 1rem 1.2rem;
+        max-width: 95%; /* Allow slightly wider on small screens */
+    }
+    .modalTitle {
+        font-size: 1.2rem;
+    }
+    .closeButton {
+        font-size: 1.4rem;
+    }
+}
